@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jaleesa Moses — Social Media Director & Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --cream: #f5f0e8;
+    --gold: #c9a84c;
+    --gold-light: #e8d49a;
+    --rust: #b85c38;
+    --sage: #7a8c6e;
+    --white: #fdfaf5;
+    --mid: #6b6560;
+    --border: rgba(10,10,10,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+    opacity: 0.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 4rem;
+    mix-blend-mode: multiply;
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--ink);
+    padding: 12rem 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -30%;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.3s;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+    font-weight: 300;
+    line-height: 0.92;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.5s;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.7s;
+  }
+
+  .hero-right {
+    background: var(--cream);
+    padding: 12rem 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .hero-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.9s;
+  }
+
+  .hero-stat {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  .hero-stat .number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .hero-stat .number span {
+    font-size: 1.5rem;
+    color: var(--gold);
+  }
+
+  .hero-stat .label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 0.5rem;
+  }
+
+  .hero-tagline {
+    grid-column: 1 / -1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--mid);
+    line-height: 1.6;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* MARQUEE */
+  .marquee-strip {
+    background: var(--gold);
+    padding: 0.9rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+  }
+  .marquee-item {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding: 0 3rem;
+  }
+  .marquee-item::before {
+    content: '◆';
+    margin-right: 3rem;
+    opacity: 0.5;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 8rem 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--white);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .about-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .about-text strong {
+    font-weight: 600;
+    color: var(--rust);
+  }
+  .about-aside {
+    border-left: 2px solid var(--gold);
+    padding-left: 2.5rem;
+  }
+  .about-aside p {
+    font-size: 0.75rem;
+    line-height: 1.8;
+    color: var(--mid);
+    margin-bottom: 2rem;
+  }
+  .press-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .press-list li {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.9rem;
+    color: var(--mid);
+  }
+
+  /* METRICS */
+  .metrics {
+    background: var(--ink);
+    color: var(--white);
+  }
+  .metrics-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 5rem;
+    max-width: 700px;
+  }
+  .metrics-headline em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .metric-card {
+    padding: 3rem 2.5rem;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .metric-card:hover {
+    background: rgba(201,168,76,0.07);
+  }
+  .metric-card:nth-child(3n) { border-right: none; }
+  .metric-card-brand {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .metric-card-stat {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+  }
+  .metric-card-stat .sign {
+    font-size: 2rem;
+    color: var(--gold);
+  }
+  .metric-card-desc {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.75rem;
+  }
+
+  /* EXPERIENCE */
+  .experience {
+    background: var(--cream);
+  }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    padding: 3.5rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: 1px solid var(--border); }
+  .exp-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .exp-year {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--mid);
+  }
+  .exp-company {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--ink);
+  }
+  .exp-loc {
+    font-size: 0.65rem;
+    color: var(--sage);
+  }
+  .exp-body {}
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .exp-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .exp-points li {
+    font-size: 0.72rem;
+    line-height: 1.7;
+    color: var(--mid);
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .exp-points li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.65rem;
+  }
+  .exp-highlight {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 0.2rem 0.6rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+
+  /* SKILLS */
+  .skills-section {
+    background: var(--white);
+  }
+  .skills-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+  }
+  .skill-group h3 {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .skill-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.8rem;
+    color: var(--ink);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .skill-tag:hover {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+
+  /* CREATOR */
+  .creator {
+    background: var(--cream);
+    overflow: hidden;
+  }
+  .creator-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .creator-text {}
+  .creator-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  .creator-heading em { font-style: italic; color: var(--rust); }
+  .creator-body {
+    font-size: 0.75rem;
+    line-height: 1.9;
+    color: var(--mid);
+    margin-bottom: 2.5rem;
+  }
+  .creator-numbers {
+    display: flex;
+    gap: 3rem;
+  }
+  .creator-num .n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .creator-num .l {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 0.4rem;
+  }
+  .creator-visual {
+    position: relative;
+    height: 400px;
+  }
+  .creator-block {
+    position: absolute;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    transition: background 0.3s;
+  }
+  .creator-block:hover { background: var(--gold); color: var(--ink); }
+  .cb1 { top: 0; left: 0; width: 55%; height: 55%; background: var(--ink); color: var(--gold); }
+  .cb2 { top: 0; right: 0; width: 40%; height: 40%; }
+  .cb3 { bottom: 0; left: 15%; width: 45%; height: 40%; }
+  .cb4 { bottom: 5%; right: 0; width: 38%; height: 50%; background: var(--rust); color: var(--cream); }
+  .cb1-inner {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .cb1-inner .big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--ink);
+    color: var(--white);
+    text-align: center;
+    padding: 8rem 0;
+  }
+  .contact-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+  .contact-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+  }
+  .contact-heading em { font-style: italic; color: var(--gold); }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  .contact-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 0.25rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-link:hover { color: var(--gold); border-color: var(--gold); }
+  .contact-footer {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.25);
+    margin-top: 4rem;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 8rem 2rem 4rem; }
+    .hero-right { padding: 4rem 2rem 6rem; }
+    nav { padding: 1.5rem 2rem; }
+    .container { padding: 0 2rem; }
+    .about-grid, .creator-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+    .metric-card:nth-child(2n) { border-right: none; }
+    .metric-card:nth-child(3n) { border-right: 1px solid rgba(255,255,255,0.1); }
+    .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+    .skills-cols { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .contact-links { flex-direction: column; gap: 1.5rem; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Jaleesa Moses</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#metrics">Impact</a></li>
+    <li><a href="#experience">Work</a></li>
+    <li><a href="#creator">Creator</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Social Media Director · Strategist · Content Creator</div>
+    <h1 class="hero-name">Jaleesa<br><em>Moses</em></h1>
+    <p class="hero-title">10+ Years · Beauty · Lifestyle · Real Estate</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-grid">
+      <div class="hero-stat">
+        <div class="number">+217<span>K%</span></div>
+        <div class="label">Impressions grown, SHAWOOD</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">1.4<span>M</span></div>
+        <div class="label">Monthly impressions, Chesmar</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">1334<span>%</span></div>
+        <div class="label">YoY video view growth</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">1<span>M+</span></div>
+        <div class="label">Combined creator audience</div>
+      </div>
+      <div class="hero-tagline">
+        From near-zero to measurable scale — building brands that become culture.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">Multi-Brand Strategy</span>
+    <span class="marquee-item">Data-Informed Creative</span>
+    <span class="marquee-item">Influencer Production</span>
+    <span class="marquee-item">Community Building</span>
+    <span class="marquee-item">Performance Analytics</span>
+    <span class="marquee-item">Platform Growth</span>
+    <span class="marquee-item">Brand Storytelling</span>
+    <span class="marquee-item">Cultural Relevance</span>
+    <span class="marquee-item">Multi-Brand Strategy</span>
+    <span class="marquee-item">Data-Informed Creative</span>
+    <span class="marquee-item">Influencer Production</span>
+    <span class="marquee-item">Community Building</span>
+    <span class="marquee-item">Performance Analytics</span>
+    <span class="marquee-item">Platform Growth</span>
+    <span class="marquee-item">Brand Storytelling</span>
+    <span class="marquee-item">Cultural Relevance</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-label">Profile</div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        Social Media Director with <strong>10+ years</strong> building multi-brand organic strategy across beauty, lifestyle, and residential real estate. Proven ability to grow platforms from <strong>near-zero to measurable scale</strong> and drive cultural relevance through data-informed creative.
+      </div>
+      <div class="about-aside reveal">
+        <p>Founder of Rawhaus — a creator brand with 1M+ combined audience across YouTube, Instagram, and TikTok. Dean's List, BFA Digital Media, University of Delaware.</p>
+        <p style="margin-bottom:1rem;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">As seen in</p>
+        <ul class="press-list">
+          <li>Teen Vogue</li>
+          <li>Refinery29</li>
+          <li>Byrdie</li>
+          <li>21Ninety</li>
+        </ul>
+        <p style="margin-top:2rem;margin-bottom:0.5rem;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Stage & Events</p>
+        <ul class="press-list">
+          <li>Cosmoprof Bologna</li>
+          <li>Disney Style Shanghai</li>
+          <li>IPSY NYFW Host</li>
+          <li>#YouTubeBlack Speaker</li>
+          <li>Italian Trade Commission</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics" id="metrics">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold);--border:rgba(255,255,255,0.1)">Impact</div>
+    <p class="metrics-headline reveal">Numbers don't lie — <em>every brand</em> grew from the day I walked in.</p>
+    <div class="metrics-grid reveal">
+      <div class="metric-card">
+        <div class="metric-card-brand">SHAWOOD · Audience</div>
+        <div class="metric-card-stat"><span class="sign">+</span>17,392<span class="sign">%</span></div>
+        <div class="metric-card-desc">Growth since hire</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-brand">SHAWOOD · Impressions</div>
+        <div class="metric-card-stat"><span class="sign">+</span>217K<span class="sign">%</span></div>
+        <div class="metric-card-desc">Growth since hire</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-brand">SHAWOOD · Engagements</div>
+        <div class="metric-card-stat"><span class="sign">+</span>31,242<span class="sign">%</span></div>
+        <div class="metric-card-desc">Growth since hire</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-brand">Chesmar Homes · Audience</div>
+        <div class="metric-card-stat"><span class="sign">+</span>524<span class="sign">%</span></div>
+        <div class="metric-card-desc">Growth since hire</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-brand">Chesmar · Impressions</div>
+        <div class="metric-card-stat"><span class="sign">+</span>75,891<span class="sign">%</span></div>
+        <div class="metric-card-desc">Growth since hire</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-brand">Chesmar · Engagements</div>
+        <div class="metric-card-stat"><span class="sign">+</span>32,900<span class="sign">%</span></div>
+        <div class="metric-card-desc">Growth since hire</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-brand">Woodside + Hubble · Audience</div>
+        <div class="metric-card-stat"><span class="sign">+</span>128<span class="sign">%</span></div>
+        <div class="metric-card-desc">Growth since hire</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-brand">Video Views YoY</div>
+        <div class="metric-card-stat"><span class="sign">+</span>1,334<span class="sign">%</span></div>
+        <div class="metric-card-desc">696K total views, 2024</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-brand">Engagement Rate</div>
+        <div class="metric-card-stat">7.99<span class="sign">%</span></div>
+        <div class="metric-card-desc">+143% YoY · Top 5 U.S. Homebuilders</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="section-label">Experience</div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <span class="exp-year">2022 – Present</span>
+        <span class="exp-company">Sekisui House, US</span>
+        <span class="exp-loc">Chandler, AZ</span>
+      </div>
+      <div class="exp-body">
+        <h3 class="exp-role">Social Media Director</h3>
+        <ul class="exp-points">
+          <li>Lead organic social strategy across 6 national homebuilder brands on Instagram, Facebook, TikTok, LinkedIn, and YouTube</li>
+          <li>Scaled SHAWOOD audience +17,392%, Chesmar impressions to 1.4M monthly, Woodside+Hubble +1,253% since hire</li>
+          <li>Led large-scale influencer production campaign with Monogram and Brizo — 13 creators, projected 5M+ impressions</li>
+          <li>Own content calendars, brand voice, community strategy, paid/organic integration, and monthly performance reporting</li>
+          <li>5 of 6 managed brands ranked in the top 5 for average engagement rate among the largest U.S. homebuilders <span class="exp-highlight">Best in Class</span></li>
+          <li>Boosted total video views 1,334% YoY and increased engagement 143% through optimized short-form content</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <span class="exp-year">2021 – 2022</span>
+        <span class="exp-company">Haus Labs by Lady Gaga</span>
+        <span class="exp-loc">El Segundo, CA</span>
+      </div>
+      <div class="exp-body">
+        <h3 class="exp-role">Assistant Manager, Social Media</h3>
+        <ul class="exp-points">
+          <li>Crafted and executed campaigns that drove significant awareness, sales, and engagement for luxury beauty brand</li>
+          <li>Produced viral "Love for Sale" social campaign amassing 1M+ views, elevating brand visibility across platforms</li>
+          <li>Created behind-the-scenes content productions with Lady Gaga and talent</li>
+          <li>Managed community engagement, fostering loyal audience and improving brand sentiment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <span class="exp-year">2015 – 2018</span>
+        <span class="exp-company">IPSY</span>
+        <span class="exp-loc">Santa Monica, CA</span>
+      </div>
+      <div class="exp-body">
+        <h3 class="exp-role">Content Creator</h3>
+        <ul class="exp-points">
+          <li>Created and sourced content for all social channels; filmed behind-the-scenes for creative photo and video shoots</li>
+          <li>Curated monthly Glam Bag selections for IPSY and beauty brand partners</li>
+          <li>Participated in IPSY New York Fashion Week and Generation Beauty as speaker/host</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <span class="exp-year">2010 – Present</span>
+        <span class="exp-company">Rawhaus</span>
+        <span class="exp-loc">Independent</span>
+      </div>
+      <div class="exp-body">
+        <h3 class="exp-role">Founder & Content Creator</h3>
+        <ul class="exp-points">
+          <li>Built 867K YouTube subscribers, 202K Instagram followers — 1M+ combined audience</li>
+          <li>Analyze analytics and algorithms to ensure growth of impressions and reach</li>
+          <li>Executed paid campaigns for luxury brand partners including NARS, Laura Mercier, and MAC</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="container">
+    <div class="section-label">Expertise</div>
+    <div class="skills-cols">
+      <div class="skill-group reveal">
+        <h3>Strategy</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Multi-Brand Social Strategy</span>
+          <span class="skill-tag">Campaign Management</span>
+          <span class="skill-tag">Trend Forecasting</span>
+          <span class="skill-tag">Paid/Organic Integration</span>
+          <span class="skill-tag">Brand Voice</span>
+          <span class="skill-tag">Psychology of Marketing</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Creative</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Content Direction & Production</span>
+          <span class="skill-tag">Video Creation & Editing</span>
+          <span class="skill-tag">Influencer & Creator Partners</span>
+          <span class="skill-tag">Community Management</span>
+          <span class="skill-tag">IG · TikTok · FB · YT · LinkedIn</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Analytics & Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Analytics & Reporting</span>
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">Sprout Social</span>
+          <span class="skill-tag">Dash Hudson</span>
+          <span class="skill-tag">Meta Business Suite</span>
+          <span class="skill-tag">Premiere Pro</span>
+          <span class="skill-tag">Adobe Creative Suite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREATOR -->
+<section class="creator" id="creator">
+  <div class="container">
+    <div class="section-label">Rawhaus</div>
+    <div class="creator-inner">
+      <div class="creator-text">
+        <h2 class="creator-heading reveal">Not just a strategist. <em>A creator</em> who built her own audience from zero.</h2>
+        <p class="creator-body reveal">Rawhaus is proof of concept. Over 14 years, I've grown a 1M+ combined audience on YouTube, Instagram, and TikTok — without a marketing budget, a team, or a brand behind me. Just strategy, creativity, and deep platform knowledge. That's what I bring to every brand I work with.</p>
+        <div class="creator-numbers reveal">
+          <div class="creator-num">
+            <div class="n">867K</div>
+            <div class="l">YouTube</div>
+          </div>
+          <div class="creator-num">
+            <div class="n">202K</div>
+            <div class="l">Instagram</div>
+          </div>
+          <div class="creator-num">
+            <div class="n">150K</div>
+            <div class="l">Twitter/X</div>
+          </div>
+        </div>
+      </div>
+      <div class="creator-visual reveal">
+        <div class="creator-block cb1">
+          <div class="cb1-inner">
+            <span class="big">1M+</span>
+            <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;">Combined Audience</span>
+          </div>
+        </div>
+        <div class="creator-block cb2">
+          <span>YouTube</span>
+        </div>
+        <div class="creator-block cb3">
+          <span>Beauty & Lifestyle</span>
+        </div>
+        <div class="creator-block cb4">
+          <span>14 Years</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <p class="contact-eyebrow">Let's work together</p>
+    <h2 class="contact-heading">Ready to build<br><em>something iconic?</em></h2>
+    <div class="contact-links">
+      <a href="mailto:jmosesdesign@gmail.com" class="contact-link">jmosesdesign@gmail.com</a>
+      <a href="tel:7472287673" class="contact-link">(747) 228-7673</a>
+      <a href="https://www.youtube.com/@rawhaus" target="_blank" class="contact-link">Rawhaus / YouTube</a>
+    </div>
+    <p class="contact-footer">© 2026 Jaleesa Moses · Social Media Director · Chandler, AZ</p>
+  </div>
+</section>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button, .metric-card, .skill-tag').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width = '20px'; cursor.style.height = '20px';
+      cursor.style.background = 'var(--rust)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width = '10px'; cursor.style.height = '10px';
+      cursor.style.background = 'var(--gold)';
+    });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
