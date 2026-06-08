@@ -5,615 +5,476 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Jaleesa Moses — Social Media Director & Strategist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Raleway:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0a0a0a;
-    --cream: #f5f0e8;
-    --gold: #c9a84c;
-    --gold-light: #e8d49a;
-    --rust: #b85c38;
-    --sage: #7a8c6e;
-    --white: #fdfaf5;
-    --mid: #6b6560;
-    --border: rgba(10,10,10,0.12);
+    --bg:      #f2f3f5;
+    --surface: #e8eaed;
+    --divider: #d8dce2;
+    --accent:  #3d4a5c;
+    --accent2: #5a6a7e;
+    --body:    #6e7a8a;
+    --head:    #1e2530;
+    --white:   #ffffff;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    color: var(--head);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 0.88rem;
+    line-height: 1.65;
     overflow-x: hidden;
     cursor: none;
   }
 
-  /* Custom cursor */
+  /* ── CURSOR ── */
   .cursor {
-    position: fixed;
-    width: 10px; height: 10px;
-    background: var(--gold);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
+    position: fixed; width: 9px; height: 9px;
+    background: var(--accent);
+    border-radius: 50%; pointer-events: none;
+    z-index: 9999; transform: translate(-50%,-50%);
+    transition: width .3s, height .3s, background .3s;
   }
   .cursor-ring {
-    position: fixed;
-    width: 36px; height: 36px;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
-    opacity: 0.6;
+    position: fixed; width: 34px; height: 34px;
+    border: 1px solid var(--accent2);
+    border-radius: 50%; pointer-events: none;
+    z-index: 9998; transform: translate(-50%,-50%);
+    transition: transform .15s ease-out, width .3s, height .3s;
+    opacity: 0.5;
   }
 
-  /* NAV */
+  /* ── NAV ── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
-    padding: 1.5rem 4rem;
-    mix-blend-mode: multiply;
+    padding: 1.6rem 4rem;
+    background: rgba(242,243,245,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--divider);
   }
   .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: var(--head);
   }
-  .nav-links {
-    display: flex; gap: 2.5rem; list-style: none;
-  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: var(--body);
     text-decoration: none;
-    opacity: 0.6;
-    transition: opacity 0.2s;
+    transition: color .2s;
   }
-  .nav-links a:hover { opacity: 1; }
+  .nav-links a:hover { color: var(--head); }
 
-  /* HERO */
+  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
   }
-
   .hero-left {
-    background: var(--ink);
+    background: var(--head);
     padding: 12rem 4rem 6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
-    overflow: hidden;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative; overflow: hidden;
   }
-
   .hero-left::before {
     content: '';
-    position: absolute;
-    top: -20%;
-    left: -30%;
-    width: 70%;
-    height: 70%;
-    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+    position: absolute; top: -20%; left: -30%;
+    width: 70%; height: 70%;
+    background: radial-gradient(circle, rgba(90,106,126,0.18) 0%, transparent 70%);
     pointer-events: none;
   }
-
   .hero-eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     font-size: 0.65rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--accent2);
     margin-bottom: 2rem;
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.3s;
+    animation: fadeUp .8s ease forwards .3s;
   }
-
   .hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(4rem, 7vw, 7rem);
-    font-weight: 300;
-    line-height: 0.92;
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+    line-height: 0.95;
     color: var(--white);
+    letter-spacing: 0.05em;
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.5s;
+    animation: fadeUp .8s ease forwards .5s;
   }
   .hero-name em {
-    font-style: italic;
-    color: var(--gold);
+    font-style: normal;
+    color: var(--accent2);
+    display: block;
   }
-
   .hero-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     font-size: 0.65rem;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--mid);
-    margin-top: 2rem;
+    color: var(--body);
+    margin-top: 2.5rem;
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.7s;
+    animation: fadeUp .8s ease forwards .7s;
   }
-
   .hero-right {
-    background: var(--cream);
+    background: var(--bg);
     padding: 12rem 4rem 6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
+    display: flex; flex-direction: column; justify-content: flex-end;
   }
-
   .hero-stat-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.9s;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    opacity: 0; animation: fadeUp .8s ease forwards .9s;
   }
-
   .hero-stat {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--divider);
     padding-top: 1.5rem;
   }
-
   .hero-stat .number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
+    font-family: 'Cinzel', serif;
     font-weight: 600;
-    color: var(--ink);
+    font-size: 2.6rem;
+    color: var(--head);
     line-height: 1;
+    letter-spacing: 0.02em;
   }
   .hero-stat .number span {
-    font-size: 1.5rem;
-    color: var(--gold);
+    font-size: 1.3rem;
+    color: var(--accent2);
   }
-
   .hero-stat .label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     font-size: 0.6rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--mid);
+    color: var(--body);
     margin-top: 0.5rem;
   }
-
   .hero-tagline {
     grid-column: 1 / -1;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     font-style: italic;
-    color: var(--mid);
-    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--body);
+    line-height: 1.65;
     padding-top: 2rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--divider);
   }
 
-  /* MARQUEE */
+  /* ── MARQUEE ── */
   .marquee-strip {
-    background: var(--gold);
-    padding: 0.9rem 0;
-    overflow: hidden;
-    white-space: nowrap;
+    background: var(--head);
+    padding: 0.85rem 0;
+    overflow: hidden; white-space: nowrap;
   }
-  .marquee-inner {
-    display: inline-block;
-    animation: marquee 25s linear infinite;
-  }
+  .marquee-inner { display: inline-block; animation: marquee 28s linear infinite; }
   .marquee-item {
-    font-size: 0.65rem;
-    letter-spacing: 0.25em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: var(--accent2);
     padding: 0 3rem;
   }
-  .marquee-item::before {
-    content: '◆';
-    margin-right: 3rem;
-    opacity: 0.5;
-  }
-
+  .marquee-item::before { content: '·'; margin-right: 3rem; opacity: 0.4; }
   @keyframes marquee {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to   { transform: translateX(-50%); }
   }
 
-  /* SECTIONS */
-  section {
-    padding: 8rem 0;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 4rem;
-  }
-
+  /* ── SHARED ── */
+  section { padding: 8rem 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
   .section-label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     font-size: 0.6rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--accent2);
     margin-bottom: 4rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    display: flex; align-items: center; gap: 1.2rem;
   }
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
 
-  /* ABOUT */
-  .about {
-    background: var(--white);
-  }
+  /* ── ABOUT ── */
+  .about { background: var(--white); }
   .about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 6rem;
-    align-items: start;
+    display: grid; grid-template-columns: 1.2fr 0.8fr;
+    gap: 6rem; align-items: start;
   }
   .about-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem;
-    font-weight: 300;
-    line-height: 1.5;
-    color: var(--ink);
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    color: var(--head);
+    letter-spacing: 0.03em;
   }
   .about-text strong {
-    font-weight: 600;
-    color: var(--rust);
+    color: var(--accent);
   }
   .about-aside {
-    border-left: 2px solid var(--gold);
+    border-left: 2px solid var(--divider);
     padding-left: 2.5rem;
   }
   .about-aside p {
-    font-size: 0.75rem;
-    line-height: 1.8;
-    color: var(--mid);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--body);
     margin-bottom: 2rem;
   }
-  .press-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .press-list li {
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border: 1px solid var(--border);
-    padding: 0.4rem 0.9rem;
-    color: var(--mid);
-  }
-
-  /* METRICS */
-  .metrics {
-    background: var(--ink);
-    color: var(--white);
-  }
-  .metrics-headline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
+  .list-label {
+    font-family: 'Raleway', sans-serif;
     font-weight: 300;
-    line-height: 1.2;
-    color: var(--white);
-    margin-bottom: 5rem;
-    max-width: 700px;
-  }
-  .metrics-headline em {
-    font-style: italic;
-    color: var(--gold);
-  }
-  .metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .metric-card {
-    padding: 3rem 2.5rem;
-    border-right: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s;
-  }
-  .metric-card:hover {
-    background: rgba(201,168,76,0.07);
-  }
-  .metric-card:nth-child(3n) { border-right: none; }
-  .metric-card-brand {
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-  .metric-card-stat {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    font-weight: 600;
-    color: var(--white);
-    line-height: 1;
-  }
-  .metric-card-stat .sign {
-    font-size: 2rem;
-    color: var(--gold);
-  }
-  .metric-card-desc {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    margin-top: 0.75rem;
-  }
-
-  /* EXPERIENCE */
-  .experience {
-    background: var(--cream);
-  }
-  .exp-item {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 4rem;
-    padding: 3.5rem 0;
-    border-top: 1px solid var(--border);
-  }
-  .exp-item:last-child { border-bottom: 1px solid var(--border); }
-  .exp-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .exp-year {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--mid);
-  }
-  .exp-company {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--ink);
-  }
-  .exp-loc {
-    font-size: 0.65rem;
-    color: var(--sage);
-  }
-  .exp-body {}
-  .exp-role {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-  }
-  .exp-points {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .exp-points li {
-    font-size: 0.72rem;
-    line-height: 1.7;
-    color: var(--mid);
-    padding-left: 1.2rem;
-    position: relative;
-  }
-  .exp-points li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-    font-size: 0.65rem;
-  }
-  .exp-highlight {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--ink);
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    padding: 0.2rem 0.6rem;
-    margin-left: 0.5rem;
-    vertical-align: middle;
-    font-weight: 500;
-  }
-
-  /* SKILLS */
-  .skills-section {
-    background: var(--white);
-  }
-  .skills-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 4rem;
-  }
-  .skill-group h3 {
     font-size: 0.6rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
+    color: var(--accent2);
+    margin-bottom: 0.75rem;
   }
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .skill-tag {
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    border: 1px solid var(--border);
-    padding: 0.4rem 0.8rem;
-    color: var(--ink);
-    transition: background 0.2s, border-color 0.2s;
-  }
-  .skill-tag:hover {
-    background: var(--ink);
-    color: var(--cream);
-    border-color: var(--ink);
+  .press-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .press-list li {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--divider);
+    padding: 0.35rem 0.8rem;
+    color: var(--body);
+    background: var(--bg);
   }
 
-  /* CREATOR */
-  .creator {
-    background: var(--cream);
-    overflow: hidden;
+  /* ── METRICS ── */
+  .metrics { background: var(--head); color: var(--white); }
+  .metrics-headline {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: clamp(1.7rem, 3.5vw, 3rem);
+    line-height: 1.25;
+    color: var(--white);
+    margin-bottom: 5rem;
+    max-width: 680px;
+    letter-spacing: 0.04em;
   }
-  .creator-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
+  .metrics-headline em {
+    font-style: normal;
+    color: var(--accent2);
   }
-  .creator-text {}
-  .creator-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
+  .metrics-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .metric-card {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: background .3s;
+  }
+  .metric-card:hover { background: rgba(90,106,126,0.12); }
+  .metric-card:nth-child(3n) { border-right: none; }
+  .metric-card-brand {
+    font-family: 'Raleway', sans-serif;
     font-weight: 300;
-    line-height: 1.2;
-    margin-bottom: 2rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 1.2rem;
   }
-  .creator-heading em { font-style: italic; color: var(--rust); }
-  .creator-body {
-    font-size: 0.75rem;
-    line-height: 1.9;
-    color: var(--mid);
-    margin-bottom: 2.5rem;
-  }
-  .creator-numbers {
-    display: flex;
-    gap: 3rem;
-  }
-  .creator-num .n {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
+  .metric-card-stat {
+    font-family: 'Cinzel', serif;
     font-weight: 600;
-    color: var(--ink);
+    font-size: 3rem;
+    color: var(--white);
     line-height: 1;
+    letter-spacing: 0.02em;
+  }
+  .metric-card-stat .sign { font-size: 1.8rem; color: var(--accent2); }
+  .metric-card-desc {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-top: 0.6rem;
+  }
+
+  /* ── EXPERIENCE ── */
+  .experience { background: var(--bg); }
+  .exp-item {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 4rem; padding: 3.5rem 0;
+    border-top: 1px solid var(--divider);
+  }
+  .exp-item:last-child { border-bottom: 1px solid var(--divider); }
+  .exp-meta { display: flex; flex-direction: column; gap: 0.4rem; }
+  .exp-year {
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.65rem; letter-spacing: 0.15em; color: var(--body);
+  }
+  .exp-company {
+    font-family: 'Cinzel', serif; font-weight: 400;
+    font-size: 0.8rem; color: var(--head); letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .exp-loc {
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.65rem; color: var(--accent2);
+  }
+  .exp-role {
+    font-family: 'Cinzel', serif; font-weight: 400;
+    font-size: 1.55rem; color: var(--head);
+    margin-bottom: 1.5rem; letter-spacing: 0.04em;
+  }
+  .exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .exp-points li {
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.82rem; line-height: 1.65;
+    color: var(--body); padding-left: 1.2rem; position: relative;
+  }
+  .exp-points li::before {
+    content: '—'; position: absolute; left: 0;
+    color: var(--accent2); font-size: 0.65rem;
+  }
+  .exp-highlight {
+    display: inline-block;
+    background: var(--accent); color: var(--white);
+    font-family: 'Raleway', sans-serif; font-weight: 400;
+    font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.2rem 0.6rem; margin-left: 0.5rem; vertical-align: middle;
+  }
+
+  /* ── SKILLS ── */
+  .skills-section { background: var(--surface); }
+  .skills-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4rem; }
+  .skill-group h3 {
+    font-family: 'Cinzel', serif; font-weight: 400;
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.5rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-tag {
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.7rem; letter-spacing: 0.06em;
+    border: 1px solid var(--divider);
+    padding: 0.4rem 0.85rem; color: var(--body);
+    background: var(--bg);
+    transition: background .2s, color .2s, border-color .2s;
+  }
+  .skill-tag:hover { background: var(--head); color: var(--white); border-color: var(--head); }
+
+  /* ── CREATOR ── */
+  .creator { background: var(--bg); overflow: hidden; }
+  .creator-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .creator-heading {
+    font-family: 'Cinzel', serif; font-weight: 400;
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    line-height: 1.3; margin-bottom: 1.8rem;
+    color: var(--head); letter-spacing: 0.04em;
+  }
+  .creator-heading em { font-style: italic; color: var(--accent2); }
+  .creator-body {
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.82rem; line-height: 1.65; color: var(--body); margin-bottom: 2.5rem;
+  }
+  .creator-numbers { display: flex; gap: 3rem; }
+  .creator-num .n {
+    font-family: 'Cinzel', serif; font-weight: 600;
+    font-size: 2.2rem; color: var(--head); line-height: 1;
   }
   .creator-num .l {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-top: 0.4rem;
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.6rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--body); margin-top: 0.4rem;
   }
-  .creator-visual {
-    position: relative;
-    height: 400px;
-  }
+  .creator-visual { position: relative; height: 400px; }
   .creator-block {
-    position: absolute;
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--mid);
-    transition: background 0.3s;
+    position: absolute; border: 1px solid var(--divider);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--body); transition: background .3s;
   }
-  .creator-block:hover { background: var(--gold); color: var(--ink); }
-  .cb1 { top: 0; left: 0; width: 55%; height: 55%; background: var(--ink); color: var(--gold); }
-  .cb2 { top: 0; right: 0; width: 40%; height: 40%; }
-  .cb3 { bottom: 0; left: 15%; width: 45%; height: 40%; }
-  .cb4 { bottom: 5%; right: 0; width: 38%; height: 50%; background: var(--rust); color: var(--cream); }
-  .cb1-inner {
-    text-align: center;
-    padding: 1.5rem;
-  }
+  .creator-block:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+  .cb1 { top:0; left:0; width:55%; height:55%; background:var(--head); color:var(--accent2); border:none; }
+  .cb2 { top:0; right:0; width:40%; height:40%; background: var(--surface); }
+  .cb3 { bottom:0; left:15%; width:45%; height:40%; background: var(--surface); }
+  .cb4 { bottom:5%; right:0; width:38%; height:50%; background:var(--accent); color:var(--white); border:none; }
+  .cb1-inner { text-align:center; padding:1.5rem; }
   .cb1-inner .big {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    font-weight: 600;
-    color: var(--white);
-    display: block;
-    line-height: 1;
+    font-family: 'Cinzel', serif; font-weight: 600;
+    font-size: 2.8rem; color: var(--white); display: block; line-height:1;
+  }
+  .cb1-inner span {
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase;
   }
 
-  /* CONTACT */
-  .contact {
-    background: var(--ink);
-    color: var(--white);
-    text-align: center;
-    padding: 8rem 0;
-  }
+  /* ── CONTACT ── */
+  .contact { background: var(--head); color: var(--white); text-align: center; padding: 8rem 0; }
   .contact-eyebrow {
-    font-size: 0.6rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2rem;
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--accent2); margin-bottom: 2rem;
   }
   .contact-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 5vw, 5rem);
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 3rem;
+    font-family: 'Cinzel', serif; font-weight: 400;
+    font-size: clamp(2rem, 4.5vw, 4.5rem);
+    line-height: 1.15; margin-bottom: 3rem;
+    color: var(--white); letter-spacing: 0.05em;
   }
-  .contact-heading em { font-style: italic; color: var(--gold); }
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-bottom: 4rem;
-  }
+  .contact-heading em { font-style: italic; color: var(--accent2); }
+  .contact-links { display: flex; justify-content: center; gap: 3rem; margin-bottom: 4rem; }
   .contact-link {
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--white);
-    text-decoration: none;
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--white); text-decoration: none;
     border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 0.25rem;
-    transition: border-color 0.2s, color 0.2s;
+    padding-bottom: 0.25rem; transition: color .2s, border-color .2s;
   }
-  .contact-link:hover { color: var(--gold); border-color: var(--gold); }
+  .contact-link:hover { color: var(--accent2); border-color: var(--accent2); }
   .contact-footer {
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    color: rgba(255,255,255,0.25);
-    margin-top: 4rem;
+    font-family: 'Raleway', sans-serif; font-weight: 300;
+    font-size: 0.6rem; letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.22); margin-top: 4rem;
   }
 
-  /* ANIMATIONS */
+  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity:0; transform:translateY(22px); }
+    to   { opacity:1; transform:translateY(0); }
   }
+  .reveal { opacity:0; transform:translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Responsive */
+  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
     .hero-left { padding: 8rem 2rem 4rem; }
@@ -623,7 +484,6 @@
     .about-grid, .creator-inner { grid-template-columns: 1fr; gap: 3rem; }
     .metrics-grid { grid-template-columns: 1fr 1fr; }
     .metric-card:nth-child(2n) { border-right: none; }
-    .metric-card:nth-child(3n) { border-right: 1px solid rgba(255,255,255,0.1); }
     .exp-item { grid-template-columns: 1fr; gap: 1rem; }
     .skills-cols { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .contact-links { flex-direction: column; gap: 1.5rem; align-items: center; }
@@ -651,7 +511,7 @@
 <section class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">Social Media Director · Strategist · Content Creator</div>
-    <h1 class="hero-name">Jaleesa<br><em>Moses</em></h1>
+    <h1 class="hero-name">Jaleesa<em>Moses</em></h1>
     <p class="hero-title">10+ Years · Beauty · Lifestyle · Construction</p>
   </div>
   <div class="hero-right">
@@ -707,18 +567,18 @@
     <div class="section-label">Profile</div>
     <div class="about-grid">
       <div class="about-text reveal">
-        Social Media Director with <strong>10+ years</strong> building multi-brand organic strategy across beauty, lifestyle, and residential construction. Proven ability to grow platforms from <strong>near-zero to measurable scale</strong> and drive cultural relevance through data-informed creative.
+        Social Media Director with <strong>10+ years</strong> building multi-brand organic strategy across beauty, lifestyle, and construction. Proven ability to grow platforms from <strong>near-zero to measurable scale</strong> and drive cultural relevance through data-informed creative.
       </div>
       <div class="about-aside reveal">
         <p>Founder of Rawhaus — a creator brand with 1M+ combined audience across YouTube, Instagram, and TikTok. Dean's List, BFA Fine Art, University of Delaware.</p>
-        <p style="margin-bottom:1rem;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">As seen in</p>
+        <p class="list-label">As seen in</p>
         <ul class="press-list">
           <li>Teen Vogue</li>
           <li>Refinery29</li>
           <li>Byrdie</li>
           <li>21Ninety</li>
         </ul>
-        <p style="margin-top:2rem;margin-bottom:0.5rem;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Stage & Events</p>
+        <p class="list-label" style="margin-top:1.8rem;">Stage & Events</p>
         <ul class="press-list">
           <li>Cosmoprof Bologna</li>
           <li>Disney Style Shanghai</li>
@@ -734,7 +594,7 @@
 <!-- METRICS -->
 <section class="metrics" id="metrics">
   <div class="container">
-    <div class="section-label" style="color:var(--gold);--border:rgba(255,255,255,0.1)">Impact</div>
+    <div class="section-label" style="color:var(--accent2);">Impact</div>
     <p class="metrics-headline reveal">Numbers don't lie — <em>every brand</em> grew from the day I walked in.</p>
     <div class="metrics-grid reveal">
       <div class="metric-card">
@@ -795,7 +655,7 @@
       <div class="exp-meta">
         <span class="exp-year">2022 – Present</span>
         <span class="exp-company">Sekisui House, US</span>
-        <span class="exp-loc">Chandler, AZ</span>
+        <span class="exp-loc">Phoenix, AZ</span>
       </div>
       <div class="exp-body">
         <h3 class="exp-role">Social Media Director</h3>
@@ -930,18 +790,12 @@
         <div class="creator-block cb1">
           <div class="cb1-inner">
             <span class="big">1M+</span>
-            <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;">Combined Audience</span>
+            <span>Combined Audience</span>
           </div>
         </div>
-        <div class="creator-block cb2">
-          <span>YouTube</span>
-        </div>
-        <div class="creator-block cb3">
-          <span>Beauty & Lifestyle</span>
-        </div>
-        <div class="creator-block cb4">
-          <span>14 Years</span>
-        </div>
+        <div class="creator-block cb2"><span>YouTube</span></div>
+        <div class="creator-block cb3"><span>Beauty & Lifestyle</span></div>
+        <div class="creator-block cb4"><span>14 Years</span></div>
       </div>
     </div>
   </div>
@@ -954,14 +808,14 @@
     <h2 class="contact-heading">Ready to build<br><em>something iconic?</em></h2>
     <div class="contact-links">
       <a href="mailto:jmosesdesign@gmail.com" class="contact-link">jmosesdesign@gmail.com</a>
-      <a href="https://www.youtube.com/@leesbeans924" target="_blank" class="contact-link">Rawhaus / YouTube</a>
+      
+      <a href="https://www.youtube.com/@rawhaus" target="_blank" class="contact-link">Rawhaus / YouTube</a>
     </div>
-    <p class="contact-footer">© 2026 Jaleesa Moses · Social Media Director · AZ|LA </p>
+    <p class="contact-footer">© 2026 Jaleesa Moses · Social Media Director · AZ | LA</p>
   </div>
 </section>
 
 <script>
-  // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -983,16 +837,15 @@
 
   document.querySelectorAll('a, button, .metric-card, .skill-tag').forEach(el => {
     el.addEventListener('mouseenter', () => {
-      cursor.style.width = '20px'; cursor.style.height = '20px';
-      cursor.style.background = 'var(--rust)';
+      cursor.style.width = '18px'; cursor.style.height = '18px';
+      cursor.style.background = 'var(--accent2)';
     });
     el.addEventListener('mouseleave', () => {
-      cursor.style.width = '10px'; cursor.style.height = '10px';
-      cursor.style.background = 'var(--gold)';
+      cursor.style.width = '9px'; cursor.style.height = '9px';
+      cursor.style.background = 'var(--accent)';
     });
   });
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
@@ -1001,7 +854,6 @@
       }
     });
   }, { threshold: 0.1 });
-
   reveals.forEach(el => observer.observe(el));
 </script>
 
