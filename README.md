@@ -1,7 +1,7 @@
 [README (2).md](https://github.com/user-attachments/files/28603472/README.2.md)
-# strategist Portfolio
+# Strategist Portfolio
 
-**Live site → [leesbeans924-bot.github.io](https://leesbeans924-bot.github.io)**
+**Live site → [https://leesbeans924-bot.github.io/strategist](https://leesbeans924-bot.github.io/strategist)**
 
 Personal portfolio for JM, Social Media Director, Strategist & Content Creator.
 
