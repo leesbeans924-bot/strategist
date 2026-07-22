@@ -145,10 +145,10 @@
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: 4rem 4rem 5rem;
   }
-  .hero-portrait { margin-bottom: 2.6rem; }
+  .hero-portrait { margin-bottom: 2.4rem; }
   .hero-portrait img {
-    width: 100%; max-width: 320px; display: block;
-    filter: grayscale(0.15);
+    width: 100%; max-width: 300px; height: auto; display: block;
+    aspect-ratio: 900 / 1183; object-fit: cover;
   }
   .stat-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 0;
@@ -349,14 +349,14 @@
 <header class="hero">
   <div class="hero-left">
     <div class="hero-monogram" aria-hidden="true">JM</div>
+    <div class="hero-portrait">
+      <img src="portrait.jpg" alt="Portrait of Jaleesa Moses" width="900" height="1183" loading="eager">
+    </div>
     <div class="eyebrow">Social Media Director &nbsp;·&nbsp; Organic &amp; Paid Strategist</div>
     <h1 class="hero-name">Jaleesa<span class="last">Moses</span></h1>
     <div class="hero-sub">10+ Years &nbsp;·&nbsp; Beauty &nbsp;·&nbsp; Lifestyle &nbsp;·&nbsp; Construction</div>
   </div>
   <div class="hero-right">
-    <div class="hero-portrait">
-      <img src="portrait.jpg" alt="Portrait of Jaleesa Moses" width="900" height="1183" loading="eager">
-    </div>
     <div class="stat-grid">
       <div class="stat">
         <div class="num">100<span class="unit">M+</span></div>
