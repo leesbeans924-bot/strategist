@@ -183,7 +183,7 @@
     font-family: 'Cinzel', serif;
     font-size: clamp(1.5rem, 2.4vw, 2.3rem);
     line-height: 1.35; letter-spacing: 0.03em;
-    color: var(--ink); max-width: 20ch;
+    color: var(--ink); max-width: none;
   }
   .hero-statement em {
     display: block; margin-top: 1rem;
@@ -249,6 +249,7 @@
     grid-column: span 2;
   }
   .metric.featured { grid-column: span 2; padding: 3rem 2.4rem; }
+  .metric.half { grid-column: span 3; }
   .metric.featured .m-num { font-size: 3.2rem; }
   .metrics-note {
     margin-top: 1.4rem; font-size: 0.68rem; letter-spacing: 0.12em;
@@ -339,6 +340,7 @@
     .press-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .metrics-grid { grid-template-columns: 1fr 1fr; }
     .metric { grid-column: span 1; }
+    .metric.half { grid-column: span 1; }
     .metric.featured { grid-column: span 2; }
     .job { grid-template-columns: 1fr; gap: 1rem; padding: 2.2rem 0; }
     .skills-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -346,7 +348,7 @@
   }
   @media (max-width: 560px) {
     .metrics-grid { grid-template-columns: 1fr; }
-    .metric, .metric.featured { grid-column: span 1; }
+    .metric, .metric.featured, .metric.half { grid-column: span 1; }
     .metric.featured .m-num { font-size: 2.8rem; }
     .skills-grid { grid-template-columns: 1fr; }
     .stat:nth-child(odd) { padding-right: 1rem; }
@@ -444,12 +446,10 @@
       <div class="metric featured"><div class="m-label">Portfolio Impressions</div><div class="m-num">100M+</div><div class="m-sub">Six-brand national portfolio</div></div>
       <div class="metric featured"><div class="m-label">Website Visits Driven</div><div class="m-num">900K+</div><div class="m-sub">Post link clicks to brand sites</div></div>
       <div class="metric featured"><div class="m-label">Creator Activation Budget</div><div class="m-num range">$500K</div><div class="m-sub">Celebrity chef, lifestyle, beauty &amp; wellness partnerships</div></div>
-      <div class="metric"><div class="m-label">Engagements</div><div class="m-num">1.8M+</div><div class="m-sub">Across the portfolio</div></div>
-      <div class="metric"><div class="m-label">Video Views</div><div class="m-num">13M+</div><div class="m-sub">Across the portfolio</div></div>
-      <div class="metric"><div class="m-label">SHAWOOD · Audience</div><div class="m-num range">0 <span class="arr">→</span> 10K</div><div class="m-sub">Built from zero</div></div>
-      <div class="metric"><div class="m-label">Chesmar · Audience</div><div class="m-num range">4K <span class="arr">→</span> 25K</div><div class="m-sub">Growth since hire</div></div>
-      <div class="metric"><div class="m-label">Woodside · Audience</div><div class="m-num range">15K <span class="arr">→</span> 40K</div><div class="m-sub">Growth since hire</div></div>
-      <div class="metric"><div class="m-label">Hubble · Audience</div><div class="m-num range">3K <span class="arr">→</span> 8K</div><div class="m-sub">Growth since hire</div></div>
+      <div class="metric half"><div class="m-label">Engagements</div><div class="m-num">1.8M+</div><div class="m-sub">Across the portfolio</div></div>
+      <div class="metric half"><div class="m-label">Video Views</div><div class="m-num">13M+</div><div class="m-sub">Across the portfolio</div></div>
+      <div class="metric half"><div class="m-label">Luxury Builder · Audience</div><div class="m-num range">0 <span class="arr">→</span> 10K</div><div class="m-sub">Flagship brand, built from zero</div></div>
+      <div class="metric half"><div class="m-label">National Builders · Audience</div><div class="m-num range">22K <span class="arr">→</span> 73K</div><div class="m-sub">Combined across 3 regional brands</div></div>
     </div>
     <p class="metrics-note reveal">Figures aggregated and rounded from platform reporting.</p>
   </div>
@@ -473,7 +473,7 @@
         <li>Direct organic and paid social strategy across 6 national homebuilder brands on Instagram, Facebook, TikTok, LinkedIn, and YouTube</li>
         <li>Lead a team of 2 social media managers and 1 coordinator; report into the Sr. Director and VP of Marketing</li>
         <li>Direct a $500K creator activation budget spanning celebrity chef, lifestyle, beauty, and wellness partnerships, plus a $65K annual paid media budget</li>
-        <li>Built SHAWOOD's audience from zero to 10K, grew Chesmar from 4K to 25K and Woodside from 15K to 40K since hire</li>
+        <li>Built the flagship luxury brand's audience from zero and roughly tripled combined audience across the regional portfolio</li>
         <li>Directed large-scale influencer production campaign with Monogram and Brizo: 13 creators, projected 5M+ impressions</li>
         <li>5 of 6 managed brands ranked in the top 5 for average engagement rate among the largest U.S. homebuilders <span class="badge">Best in Class</span></li>
         <li>Drove 100M+ impressions, 1.8M+ engagements, and 900K+ website visits across the brand portfolio</li>
