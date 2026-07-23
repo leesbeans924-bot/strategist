@@ -218,7 +218,8 @@
 
   /* ---------- About ---------- */
   .about-grid { display: grid; grid-template-columns: 1fr; }
-  .about-copy { max-width: 780px; }
+  .about-copy { max-width: none; }
+  .about-paras { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 4rem; align-items: start; }
   .about-h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin: 0.9rem 0 1.8rem; }
   .about-copy p { margin-bottom: 1.4rem; color: var(--body); font-size: 1rem; }
   .about-copy strong { color: var(--ink); font-weight: 500; }
@@ -337,6 +338,7 @@
     .hero-right { padding: 3rem 1.6rem 3.5rem; }
     section { padding: 4.5rem 1.6rem; }
     .about-grid, .creator-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-paras { grid-template-columns: 1fr; gap: 0; }
     .press-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .metrics-grid { grid-template-columns: 1fr 1fr; }
     .metric { grid-column: span 1; }
@@ -426,8 +428,10 @@
     <div class="about-copy reveal">
       <div class="eyebrow">Profile</div>
       <h2 class="about-h2">I make virality repeatable, not just lucky.</h2>
-      <p>Social Media Director with <strong>10+ years</strong> directing multi-brand strategy across beauty, lifestyle, and construction. I build the systems behind the growth: brand voice, content engines, creator programs, and the reporting that proves it all. Proven ability to take platforms from <strong>near-zero to measurable scale</strong> and turn performance data into creative direction.</p>
-      <p>Founder of Rawhaus, a creator brand with 1M+ combined audience across YouTube, Instagram, and TikTok. Dean's List, BFA Fine Art, University of Delaware.</p>
+      <div class="about-paras">
+        <p>Social Media Director with <strong>10+ years</strong> directing multi-brand strategy across beauty, lifestyle, and construction. I build the systems behind the growth: brand voice, content engines, creator programs, and the reporting that proves it all. Proven ability to take platforms from <strong>near-zero to measurable scale</strong> and turn performance data into creative direction.</p>
+        <p>Founder of Rawhaus, a creator brand with 1M+ combined audience across YouTube, Instagram, and TikTok. Dean's List, BFA Fine Art, University of Delaware.</p>
+      </div>
       <div class="paid-callout">
         <span class="eyebrow">Organic &amp; Paid, One System</span>
         <p>I direct organic and paid as a single full-funnel engine: amplification strategy, creative testing, audience insights, and performance reporting across Meta, TikTok, LinkedIn, and YouTube. Organic builds the culture. Paid scales it.</p>
